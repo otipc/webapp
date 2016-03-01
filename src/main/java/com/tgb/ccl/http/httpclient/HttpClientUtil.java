@@ -298,7 +298,7 @@ public class HttpClientUtil{
 	 * 下载图片
 	 * 
 	 * @param config		请求参数配置
-	 * @param out					输出流
+	 * @param //out					输出流
 	 * @return						返回处理结果
 	 * @throws HttpProcessException 
 	 */
@@ -324,12 +324,12 @@ public class HttpClientUtil{
 	/**
 	 * 请求资源或服务
 	 * 
-	 * @param client				client对象
-	 * @param url					资源地址
-	 * @param httpMethod	请求方法
-	 * @param parasMap		请求参数
-	 * @param headers			请求头信息
-	 * @param encoding		编码
+	 * @param //client				client对象
+	 * @param //url					资源地址
+	 * @param //httpMethod	请求方法
+	 * @param //parasMap		请求参数
+	 * @param //headers			请求头信息
+	 * @param //encoding		编码
 	 * @return						返回处理结果
 	 * @throws HttpProcessException 
 	 */
@@ -387,7 +387,7 @@ public class HttpClientUtil{
 	/**
 	 * 转化为字符串
 	 * 
-	 * @param entity			实体
+	 * @param //entity			实体
 	 * @param encoding	编码
 	 * @return
 	 * @throws HttpProcessException 
@@ -412,7 +412,7 @@ public class HttpClientUtil{
 	/**
 	 * 转化为流
 	 * 
-	 * @param entity			实体
+	 * @param //entity			实体
 	 * @param out				输出流
 	 * @return
 	 * @throws HttpProcessException 

@@ -62,8 +62,7 @@ public abstract class SendDataTool {
     
     /**
      * 发送请求
-     * @param 报文头【Content-type】
-     * @throws HttpProcessException 
+     * @throws HttpProcessException
      */
     public String send(String date, String url, String contentType)  throws HttpProcessException {
     	return send(date, url, contentType, Charset.defaultCharset().name());
@@ -72,8 +71,7 @@ public abstract class SendDataTool {
     /**
      * 
      * 发送请求
-     * @param 报文头【Content-type】
-     * @throws HttpProcessException 
+     * @throws HttpProcessException
      */
     public String send(String date, String url, String contentType, String encoding)  throws HttpProcessException {
 

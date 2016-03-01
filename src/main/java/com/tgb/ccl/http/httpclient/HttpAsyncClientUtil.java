@@ -303,7 +303,7 @@ public class HttpAsyncClientUtil{
 	 * 下载图片
 	 * 
 	 * @param config		请求参数配置
-	 * @param out					输出流
+	 * @param 				//	输出流
 	 * @throws HttpProcessException 
 	 */
 	public static void down(HttpConfig config) throws HttpProcessException {
@@ -314,7 +314,7 @@ public class HttpAsyncClientUtil{
 	 * 请求资源或服务
 	 * 
 	 * @param config				请求参数配置
-	 * @param out					输出流对象
+	 * @param //out					输出流对象
 	 * @throws HttpProcessException 
 	 */
 	private static void execute(HttpConfig config) throws HttpProcessException {
@@ -469,7 +469,7 @@ public class HttpAsyncClientUtil{
 	/**
 	 * 转化为字符串
 	 * 
-	 * @param entity			实体
+	 * @param //entity			实体
 	 * @param encoding	编码
 	 * @return
 	 * @throws HttpProcessException 
@@ -503,7 +503,7 @@ public class HttpAsyncClientUtil{
 	/**
 	 * 转化为流
 	 * 
-	 * @param entity			实体
+	 * @param //entity			实体
 	 * @param out				输出流
 	 * @return
 	 * @throws HttpProcessException 
