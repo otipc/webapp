@@ -1,55 +1,68 @@
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'idea'
+apply plugin: 'war'
 
 group = 'co.otipc'
 version = '1.0-SNAPSHOT'
 
-description = """webapp Maven Webapp"""
+description = """web-app"""
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 
 
 repositories {
-        
-     maven { url "http://repo.spring.io/snapshot" }
-     maven { url "http://repo.spring.io/milestone" }
-     maven { url "http://repo.maven.apache.org/maven2" }
+
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+    maven { url "http://repo.maven.apache.org/maven2" }
 }
 dependencies {
 
-    compile 'com.sun.tools.btrace:btrace-agent:1.2.3'
+    compile(
+            'org.springframework:spring-webmvc:4.2.5.RELEASE',
+            'org.springframework:spring-context-support:4.2.5.RELEASE',
+            'com.alibaba:fastjson:1.1.41',
+            'com.google.guava:guava:19.0',
+            'org.apache.velocity:velocity:1.7',
+            'org.apache.velocity:velocity-tools:2.0',
+            'commons-fileupload:commons-fileupload:1.2.2',
+            'org.slf4j:slf4j-log4j12:1.7.18',
 
-    compile(group: 'org.springframework', name: 'spring-context', version:'4.2.2.RELEASE') {
-exclude(module: 'commons-logging')
-    }
-    compile group: 'org.springframework', name: 'spring-webmvc', version:'4.2.2.RELEASE'
-    compile group: 'org.aspectj', name: 'aspectjrt', version:'1.8.1'
-    compile group: 'org.slf4j', name: 'slf4j-api', version:'1.7.12'
-    compile group: 'javax.inject', name: 'javax.inject', version:'1'
-    compile(group: 'javax.servlet.jsp.jstl', name: 'jstl-api', version:'1.2') {
-exclude(module: 'servlet-api')
-    }
-    compile(group: 'org.glassfish.web', name: 'jstl-impl', version:'1.2') {
-exclude(module: 'servlet-api')
-    }
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version:'2.5.3'
-    compile group: 'com.rometools', name: 'rome', version:'1.5.0'
-    compile group: 'javax.validation', name: 'validation-api', version:'1.0.0.GA'
-    compile group: 'org.hibernate', name: 'hibernate-validator', version:'4.1.0.Final'
-    compile group: 'joda-time', name: 'joda-time', version:'2.3'
-    compile group: 'commons-fileupload', name: 'commons-fileupload', version:'1.2.2'
-    compile group: 'commons-io', name: 'commons-io', version:'2.0.1'
-    compile group: 'org.springframework.security', name: 'spring-security-web', version:'4.0.1.RELEASE'
-    runtime group: 'org.slf4j', name: 'jcl-over-slf4j', version:'1.7.12'
-    runtime group: 'org.slf4j', name: 'slf4j-log4j12', version:'1.7.12'
-    runtime group: 'log4j', name: 'log4j', version:'1.2.16'
-    testCompile group: 'org.springframework', name: 'spring-test', version:'4.2.2.RELEASE'
-    testCompile group: 'junit', name: 'junit', version:'4.11'
-    testCompile group: 'xmlunit', name: 'xmlunit', version:'1.2'
-    testCompile group: 'com.jayway.jsonpath', name: 'json-path', version:'0.8.1'
-    testCompile group: 'org.hamcrest', name: 'hamcrest-library', version:'1.3'
-    providedCompile group: 'org.apache.tomcat', name: 'tomcat-servlet-api', version:'7.0.30'
-    providedCompile group: 'javax.servlet.jsp', name: 'jsp-api', version:'2.1'
+            'org.apache.httpcomponents:httpclient:4.4.1',
+            'org.apache.httpcomponents:httpasyncclient:4.1.1',
+    )
+
+    providedCompile(
+            'javax.servlet:javax.servlet-api:3.1.0',
+    )
+
+    runtime(
+            'log4j:log4j:1.2.17',
+            'org.slf4j:jcl-over-slf4j:1.7.10',
+            'org.slf4j:slf4j-log4j12:1.7.10'
+    )
+    testCompile(
+            'junit:junit:4.12',
+            'org.springframework:spring-test:4.2.5.RELEASE'
+    )
+
 }
+
+apply plugin: 'org.akhikhl.gretty'
+gretty {
+    port = 8088
+    contextPath = project.name
+    servletContainer = 'jetty9'
+}
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+'
+    }
+}
+

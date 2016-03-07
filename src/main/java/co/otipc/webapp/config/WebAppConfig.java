@@ -1,4 +1,4 @@
-package co.otipc.webapp.config;//package net.petrikainulainen.gradle.webapp.config;
+//package co.otipc.webapp.config;
 //
 //import org.springframework.web.WebApplicationInitializer;
 //import org.springframework.web.context.ContextLoaderListener;

@@ -3,10 +3,7 @@ package co.otipc.guava;
 
 
 import com.google.common.base.*;
-import com.google.common.collect.Ordering;
-import com.rometools.rome.feed.rss.Item;
 
-import java.util.Comparator;
 
 /**
  * Created by cuichaoguo on 16/2/29.

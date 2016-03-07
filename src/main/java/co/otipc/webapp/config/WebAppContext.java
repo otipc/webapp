@@ -1,4 +1,4 @@
-package co.otipc.webapp.config;//package net.petrikainulainen.gradle.webapp.config;
+//package co.otipc.webapp.config;
 //
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.ComponentScan;
@@ -14,7 +14,7 @@ package co.otipc.webapp.config;//package net.petrikainulainen.gradle.webapp.conf
 // * @author Petri Kainulainen
 // */
 //@Configuration
-//@ComponentScan("net.petrikainulainen.gradle.webapp.controller")
+//@ComponentScan("co.otipc.webapp.controller")
 //@EnableWebMvc
 //public class WebAppContext extends WebMvcConfigurerAdapter {
 //
